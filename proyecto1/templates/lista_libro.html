@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="list">
+    <h1>Libros</h1>
+    {% if request.user.usertype == 'editor' or request.user.usertype == 'administrator' %}
+    <a href="{% url 'biblioteca_app:create_view'%}"> 
+        <button type="button">Crear Libro</button>
+    </a>
+    {%endif%}
+    {% for data in dataset %}
+
+    <div>
+    {% if request.user.usertype == 'editor' or request.user.usertype == 'administrator' %}
+        <p><a href="{% url 'biblioteca_app:libro_update' data.pk %}"> {{ data.titulo }}</a></p>
+    {%endif%}
+    </div>
+    <b>Autor:</b> {{ data.autor }}<br/>
+    <b>Año edicion:</b> {{ data.ano_edicion }}<br/>
+    <b>Tematica:</b> {{ data.tematica }}<br/>
+    <b>ISBN:</b> {{ data.isbn }}<br/>
+    <b>Editorial:</b> {{ data.editorial }}<br/>
+    <b>Año editorial:</b> {{ data.ano_editorial }}<br/>
+    <b>Descripcion:</b> {{ data.descripcion }}<br/>
+
+    <hr/>
+
+
+    {% endfor %}
+
+</div>
+
+<form method="GET">
+    <input type="text" name="query" placeholder="Buscar libros...">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if query %}
+    <h2>Resultados de la búsqueda para "{{ query }}":</h2>
+{% endif %}
+
+<ul>
+    {% for libro in dataset %}
+        <li>{{ libro.titulo }} - {{ libro.autor.name }} - {{ libro.tematica.nombre }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %} 

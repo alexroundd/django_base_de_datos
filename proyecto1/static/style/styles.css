@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.listPost {
+    list-style: none;
+    padding: 0;
+}
+
+.listPost li {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.listPost li:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.infotext {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .listPost li {
+        padding: 10px;
+    }
+}
+
+
+.list {
+    margin: 20px auto;
+    width: 70%;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .list div {
+    margin-bottom: 15px;
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .list div p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .list div p a:hover {
+    color: #0056b3;
+  }
+
+  .list div p, .list div br {
+    margin-bottom: 5px;
+  }
